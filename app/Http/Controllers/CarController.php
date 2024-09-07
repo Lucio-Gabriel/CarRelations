@@ -17,4 +17,18 @@ class CarController extends Controller
         return $car;
     }
 
+    public function insert(Request $r){
+        $rawData = $r->only([
+            'marca',
+            'modelo',
+            'ano',
+            'placa',
+            'cor',
+            'tipo_veiculo',
+        ]);
+
+        $car = Car::create($rawData);
+
+        return $car;
+    }
 }

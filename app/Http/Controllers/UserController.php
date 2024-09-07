@@ -16,4 +16,17 @@ class UserController extends Controller
         $user = User::find($r->id);
         return $user;
     }
+
+    public function insert(Request $r){
+        $rawData = $r->only
+        (['name',
+        'email',
+        'cnh',
+        'categoria_cnh',
+        'password']);
+
+        $user = User::create($rawData);
+
+        return $user;
+    }
 }
