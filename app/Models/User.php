@@ -43,4 +43,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // criando um metodo
+    public function cars(){
+        return $this->hasOne(Car::class, 'id', 'veiculo_id');
+    }
 }
